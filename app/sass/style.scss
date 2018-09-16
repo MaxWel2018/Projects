@@ -1,3 +1,154 @@
-.border_radius {
-  border-radius: 21px;
+@import "partials/mixins";
+@import "partials/params";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background: $bg-color;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  margin: 0 auto;
+  flex-direction: column;
+  width: $document-wight;
+}
+
+header {
+  height: 100vh;
+
+}
+
+.main {
+  padding: 12px 0;
+  a {
+    text-decoration: none;
+    color: $font-color-white;
+
+  }
+  li {
+    list-style-type: none;
+  }
+
+  &-navigation {
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &-header-logo {
+  }
+  &-site-navigation {
+    letter-spacing: 0.8px;
+    line-height: 1.125;
+    position: relative;
+    padding-inline-start: 0;
+    font-weight: bold;
+    li {
+      padding: 10px;
+      border-radius: 25px;
+      margin-left: 20px;
+      transition: .3s all;
+      a {
+        border-bottom: 100px solid transparent;
+      }
+
+      &:hover {
+        background: white;
+        border-radius: 25px;
+        a {
+          transition: .3s all;
+          color: black;
+
+        }
+        /*Выпадающие менб*/
+        .drop-menu {
+          position: absolute;
+          background-color: white;
+          border-radius: 5%;
+          margin-top: 10px;
+          padding: 0;
+          top: 100%;
+          left: 20px;
+          opacity: 1.0;
+          a {
+            color: black;
+            font-weight: 400;
+
+          }
+          li {
+            margin: 0;
+          }
+        }
+      }
+
+      /*Выпдающие меню*/
+      .drop-menu {
+        position: absolute;
+
+        top: -99999em;
+        opacity: 1.0;
+        a {
+          color: black;
+          font-weight: 400;
+
+        }
+        li {
+          margin: 0;
+        }
+      }
+
+    }
+  }
+      /*навигация пользователя */
+      &-user-navigation {
+        justify-content: center;
+        align-items: center;
+        font-weight: 300;
+        font-size: 14px;
+        &.flex {
+          margin-left: auto;
+          a {
+            display: inline-flex;
+            background-color: $bg-entrance;
+            color: $font-color-white;
+            border-radius: 25px;
+            margin-left: 15px;
+            padding: 10px;
+            transition: 0.3s;
+            &:hover {
+              background-color: lighten($bg-entrance, 10%);
+            }
+
+            &:nth-child(2) {
+              padding: 10px 15px;
+            }
+            &:nth-child(3) {
+              padding: 10px 50px 10px 15px
+
+            }
+          }
+        }
+
+      }
+    }
+
+
